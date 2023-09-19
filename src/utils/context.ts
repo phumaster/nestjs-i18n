@@ -9,6 +9,11 @@ export function getContextObject(
 
   switch (contextType) {
     case 'http':
+      /**
+     * Support telegraf.
+     * I need to use nest-telegraf in telegram bot
+     */
+    case 'telegraf':
       return context.switchToHttp().getRequest();
     case 'graphql':
       return context.getArgs()[2];
